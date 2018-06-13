@@ -15,7 +15,7 @@ for (let index = 0; index < comp.length; index++) {
         div.style.left = (ceRect.left + ceRect.width / 2) + 'px';
         div.style.transform = "translate(-50%)";
 
-        ce.appendChild(div)
+        ce.parentNode.insertBefore(div,ce.nextSibling);
 
         ce.addEventListener("mouseover", function (el, ev) {
             div.classList.add('on');
