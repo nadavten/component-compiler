@@ -1,29 +1,29 @@
-var comp = document.getElementsByTagName('tooltip');
+var tooltipsElements = document.getElementsByTagName('tooltip');
 
-for (let index = 0; index < comp.length; index++) {
-    const compElement = comp[index];
+for (let index = 0; index < tooltipsElements.length; index++) {
+    const tooltipElement = tooltipsElements[index];
 
-    (function (ce) {
+    (function (tooltipElm) {
 
-        var ceRect = ce.getBoundingClientRect();
+        var tooltipElmRect = tooltipElm.getBoundingClientRect();
 
         var div = document.createElement('div');
         div.classList.add('tooltip');
-        div.innerText = ce.getAttribute('title');
+        div.innerText = tooltipElm.getAttribute('title');
 
-        div.style.top = (ceRect.top + ceRect.height) + 'px';
-        div.style.left = (ceRect.left + ceRect.width / 2) + 'px';
+        div.style.top = (tooltipElmRect.top + tooltipElmRect.height) + 'px';
+        div.style.left = (tooltipElmRect.left + tooltipElmRect.width / 2) + 'px';
         div.style.transform = "translate(-50%)";
 
-        ce.parentNode.insertBefore(div,ce.nextSibling);
+        tooltipElm.parentNode.insertBefore(div,tooltipElm.nextSibling);
 
-        ce.addEventListener("mouseover", function (el, ev) {
+        tooltipElm.addEventListener("mouseover", function (el, ev) {
             div.classList.add('on');
         });
 
-        ce.addEventListener("mouseleave", function (el, ev) {
+        tooltipElm.addEventListener("mouseleave", function (el, ev) {
             div.classList.remove('on');
         })
 
-    })(compElement)
+    })(tooltipElement)
 }
