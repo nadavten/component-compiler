@@ -1,0 +1,11 @@
+.tooltip{
+    position: absolute;
+    display: none;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid silver;
+}
+
+.tooltip.on{
+    display: inline;
+}
