@@ -6,7 +6,6 @@ for (let index = 0; index < comp.length; index++) {
     (function (ce) {
 
         var ceRect = ce.getBoundingClientRect();
-        ce.rect
 
         var div = document.createElement('div');
         div.style.position = "absolute";
